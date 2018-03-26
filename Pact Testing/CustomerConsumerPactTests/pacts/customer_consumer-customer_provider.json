@@ -1,0 +1,53 @@
+{
+  "consumer": {
+    "name": "CUSTOMER CONSUMER"
+  },
+  "provider": {
+    "name": "CUSTOMER PROVIDER"
+  },
+  "interactions": [
+    {
+      "description": "A GET request to retrieve the customer",
+      "providerState": "There is not a customer with an ID of 2",
+      "request": {
+        "method": "get",
+        "path": "/customer/2",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {
+        }
+      }
+    },
+    {
+      "description": "A GET request to retrieve the customer",
+      "providerState": "There is a customer with an ID of 1",
+      "request": {
+        "method": "get",
+        "path": "/customer/1",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "id": 1,
+          "firstName": "Paul",
+          "surname": "Davidson"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
